@@ -52,9 +52,6 @@ I set to work outlining my needs and work through the process to complete the ta
 
 <p>I set about updating my code to follow this new example.  A new problem was presented though, I didn't see a way to refernce my .env file and my stored API Key.  So I moved forward with hard-coding my API key which proved successful but now my API was hardcoded to my app.  Not very secure, but the app is working so for now I moved forward to the currency converter section. This section called upon another API and another function and more errors!</p>
 <br>
-
-![Latest Success](/images/Latest_Success.png)
-
 <p>Reading through the instructions for setting up this function I realized there was no mention of adding my converter api key to the .env file for reference. Odd. Oh well, moving on we ran into another URL problem.  Testing the converter locally the URL it was reaching out didn't match the one in the instructions.  Time for an update!. I also saw that the api key was appened at the end of url so I set about adding that to the call out URL.  Again another hard-coded API to fix after all of this.  This resolved my errors but was getting no return value.  So now 2 problems to fix. I was also seeing that in all the example api calls provided by converter api there was no mention of adding a number vaule to convert from.  My guess was this would be a combination between fixer.io and converter to get the right call back.</p>
 
 ![Converter API](/images/Testing_Converter.png)
