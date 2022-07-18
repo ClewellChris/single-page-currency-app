@@ -78,15 +78,15 @@ I set to work outlining my needs and work through the process to complete the ta
 
 <p>The next steps are done through Terminal or Command Line depending on our OS. AWS provides all the commands needed to "Dockerize" the app and push it up to our newly created container. After going thorugh these steps we can see the image in the container ready to go! Also remembering to specify my personal CLI profile for the correct account</p>
 
-# ![Container Image Screenshot](/images/Container_Image_Screen_Shot.png)
+
 
 <p>Now we are going to be working within Amazon ECS which consists of 3 parts: Clusters, Tasks, & Services. Tasks being the directions for how a container should be run, Services runs the tasks and is very similar to an auto-scaling group in EC2 as it can restart or kill tasks as needed, and finally a Cluster is a logial grouping of of services and tasks</p>
 
-# ![Task Service Snippet](/images/Task_Service_Description.png)
+
 
 <p>Now we move to creating the cluster to then create the tasks and services in</p>
 
-# ![Cluster Snippet](/images/Cluster_Snippet.png)
+
 
 <p>Now we are going to work creating our first task.  This is where we will define how our container will run, defining cpu, memory, and ports open for the app to run.  We are also going to create an assume role IAM policy for the ECS Service to execute all necessary tasks.  This is also were we are going to start definging using FARGATE.  Which is a serverless compute service for containers within AWS which takes away the headache of having to manage servers and ec2 instances and allows you to pay as you go. This service is also compatible with EKS as well</p>
 
@@ -101,7 +101,6 @@ I set to work outlining my needs and work through the process to complete the ta
 <p>After creating the ALB I also needed to create a listner so traffic could come in and also a target group to add the containers to so the ALB knew where to listen to</p>
 
 ![AWS ALB](/images/AWS_ALB.png)
-# ![ALB DNS](/images/ALB_DNS.png)
 
 <p>Since we are pointing our listner to a target group now we need to add our containers to the target group. From there I needed to open up traffic to the containers by creating a security group to allow traffic only from the ALB.  ECS doesn't allow traffic by default.  Once we have finished the build we will give the containers some time for them to be healthy enough to run.  Time to test our app!</p>
 
